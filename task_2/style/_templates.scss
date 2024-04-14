@@ -1,0 +1,36 @@
+%flex-elements {
+    display: flex;
+    align-items: center;
+}
+  
+%grid-element-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+  
+%font-first-400 {
+    font-family: $first-font-family;
+    font-weight: 400;
+}
+  
+%font-a {
+    @extend %font-first-400;
+    font-size: 17px;
+    color: $third-color;
+    text-decoration: none;
+}
+  
+%font-400-15px-center {
+    @extend %font-first-400;
+    font-size: 15px;
+    text-align: center;
+}
+  
+%style-additional {
+    margin-top: 24px;
+    @extend %font-first-400;
+    font-size: 18px;
+    line-height: 170%;
+    font-size: 16px;
+    color: $second-color;
+}

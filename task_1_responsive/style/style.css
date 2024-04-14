@@ -1,0 +1,58 @@
+.conteiner .footer .footer-item, .conteiner .main .content .item, .conteiner .header {
+  display: grid;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.conteiner {
+  display: grid;
+  grid-template-rows: 10vh 1fr 15vh;
+  height: 100vh;
+  text-align: center;
+  font-weight: bold;
+}
+.conteiner .header {
+  justify-items: center;
+  background-color: rgba(118, 113, 113, 0.307);
+}
+.conteiner .main {
+  display: grid;
+  grid-template-columns: 65% 35%;
+}
+.conteiner .main .content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 55% repeat(2, 1fr);
+  grid-gap: 2% 3%;
+  padding: 2%;
+  background-color: rgba(255, 213, 0, 0.305);
+}
+.conteiner .main .content .main-section {
+  grid-area: 1/1/2/-1;
+}
+.conteiner .main .content .item {
+  background-color: rgba(255, 213, 0, 0.618);
+}
+.conteiner .main .content .item-3 {
+  grid-area: 3/1/4/3;
+}
+.conteiner .main .addition {
+  padding: 2%;
+  background-color: rgba(144, 222, 144, 0.373);
+}
+.conteiner .footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  -moz-column-gap: 3%;
+       column-gap: 3%;
+  padding: 2%;
+  background-color: rgba(118, 113, 113, 0.307);
+}
+.conteiner .footer .footer-item {
+  background-color: white;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,118 @@
+.body .footer .footer-box,
+.body .main .content .section .box,
+.body .main .content .section,
+.body .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.body .main .content .main-section,
+.body .main .content,
+.body .main {
+  display: flex;
+  flex-grow: 1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-weight: bold;
+}
+.body .header {
+  flex-direction: column;
+  height: 10vh;
+  background-color: rgba(118, 113, 113, 0.307);
+}
+.body .main .content {
+  flex-direction: column;
+  padding: 20px;
+  background-color: rgba(255, 213, 0, 0.305);
+}
+.body .main .content .main-section {
+  justify-content: center;
+}
+.body .main .content .section {
+  row-gap: 20px;
+}
+.body .main .content .section .box {
+  background-color: rgba(255, 213, 0, 0.618);
+}
+.body .main .addition {
+  padding: 20px;
+  text-align: center;
+  flex-basis: 35vw;
+  background-color: rgba(144, 222, 144, 0.373);
+}
+.body .footer {
+  display: flex;
+  padding: 20px;
+  height: 15vh;
+  background-color: rgba(118, 113, 113, 0.307);
+}
+.body .footer .footer-box {
+  flex-grow: 1;
+  background-color: white;
+}
+
+@media screen and (min-width: 1024px) {
+  .body .main .content .section {
+    flex-basis: 45%;
+    flex-wrap: wrap;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+  }
+  .body .main .content .section .box {
+    flex-grow: 1;
+    height: calc((100% - 20px) / 2);
+  }
+  .body .main .content .section .box:nth-of-type(3) {
+    width: 100%;
+  }
+  .body .footer {
+    -moz-column-gap: 40px;
+    column-gap: 40px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .body .main .content .section {
+    flex-direction: column;
+    flex-basis: 55%;
+    row-gap: 15px;
+  }
+  .body .main .content .section .box {
+    height: calc((100% - 30px) / 3);
+    width: 100%;
+  }
+  .body .footer {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .body .footer .footer-box {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .body .main .content .section {
+    flex-direction: column;
+    flex-basis: 55%;
+    row-gap: 15px;
+  }
+  .body .main .content .section .box {
+    height: calc((100% - 30px) / 3);
+    width: 100%;
+  }
+  .body .main .addition {
+    display: none;
+  }
+  .body .footer {
+    display: none;
+  }
+} /*# sourceMappingURL=style.css.map */

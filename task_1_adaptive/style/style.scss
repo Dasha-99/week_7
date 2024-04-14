@@ -1,0 +1,159 @@
+$grey-color: rgba(118, 113, 113, 0.307);
+%flex-element-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%flex-element-grow {
+  display: flex;
+  flex-grow: 1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-weight: bold;
+
+  .header {
+    @extend %flex-element-center;
+    flex-direction: column;
+    height: 10vh;
+    background-color: $grey-color;
+  }
+
+  .main {
+    @extend %flex-element-grow;
+
+    .content {
+      @extend %flex-element-grow;
+      flex-direction: column;
+      padding: 20px;
+      background-color: rgba(255, 213, 0, 0.305);
+
+      .main-section {
+        @extend %flex-element-grow;
+        justify-content: center;
+      }
+
+      .section {
+        @extend %flex-element-center;
+        row-gap: 20px;
+
+        .box {
+          @extend %flex-element-center;
+          background-color: rgba(255, 213, 0, 0.618);
+        }
+      }
+    }
+
+    .addition {
+      padding: 20px;
+      text-align: center;
+      flex-basis: 35vw;
+      background-color: rgba(144, 222, 144, 0.373);
+    }
+  }
+
+  .footer {
+    display: flex;
+    padding: 20px;
+    height: 15vh;
+    background-color: $grey-color;
+
+    .footer-box {
+      @extend %flex-element-center;
+      flex-grow: 1;
+      background-color: white;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .body {
+    .main {
+      .content {
+        .section {
+          flex-basis: 45%;
+          flex-wrap: wrap;
+          column-gap: 20px;
+
+          .box {
+            flex-grow: 1;
+            height: calc((100% - 20px) / 2);
+
+            &:nth-of-type(3) {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .footer {
+      column-gap: 40px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .body {
+    .main {
+      .content {
+        .section {
+          flex-direction: column;
+          flex-basis: 55%;
+          row-gap: 15px;
+
+          .box {
+            height: calc((100% - 15px * 2) / 3);
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .footer {
+      flex-wrap: wrap;
+      gap: 20px;
+
+      .footer-box {
+        width: 45%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .body {
+    .main {
+      .content {
+        .section {
+          flex-direction: column;
+          flex-basis: 55%;
+          row-gap: 15px;
+
+          .box {
+            height: calc((100% - 15px * 2) / 3);
+            width: 100%;
+          }
+        }
+      }
+
+      .addition {
+        display: none;
+      }
+    }
+
+    .footer {
+      display: none;
+    }
+  }
+}
